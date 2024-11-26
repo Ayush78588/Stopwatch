@@ -20,15 +20,16 @@ function stopwatch() {
         if (c === 100) {
             s++;
             c=0;
+            if (s === 60) {
+                m++;
+                s = 0;
+                if (m == 60) {
+                    h++;
+                    m = 0;
+                }
+            }
         }
-        if (s === 60) {
-            m++;
-            s = 0;
-        }
-        if (m == 60) {
-            h++;
-            m = 0;
-        }
+        
         count.innerHTML=checkTime(c);
         sec.innerHTML = checkTime(s);
         min.innerHTML = checkTime(m);
